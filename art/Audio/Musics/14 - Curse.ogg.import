@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b0t1nk356upov"
+path="res://.godot/imported/14 - Curse.ogg-75f22b4e7d5c12b259fbe00c645dc14f.oggvorbisstr"
+
+[deps]
+
+source_file="res://art/Audio/Musics/14 - Curse.ogg"
+dest_files=["res://.godot/imported/14 - Curse.ogg-75f22b4e7d5c12b259fbe00c645dc14f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
