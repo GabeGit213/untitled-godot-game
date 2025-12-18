@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://db3wop2pmer0d"]
+
+[ext_resource type="Texture2D" uid="uid://cqtogu8aybor" path="res://art/Actor/Characters/Monk/SpriteSheet.png" id="1_453lb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_453lb"]
+atlas = ExtResource("1_453lb")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hw05q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_453lb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1yfp0"]
+radius = 8.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_hw05q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_1yfp0")

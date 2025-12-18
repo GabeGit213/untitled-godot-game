@@ -15,10 +15,6 @@ run/main_scene="uid://dajrpwhamxcy7"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://art/icon.svg"
 
-[display]
-
-window/stretch/scale=4.0
-
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
