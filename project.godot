@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Masters In Apprenticeship"
-run/main_scene="uid://bsv8kvchuu36j"
+run/main_scene="uid://dajrpwhamxcy7"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://art/icon.svg"
 

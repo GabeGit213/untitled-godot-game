@@ -1,7 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://bsv8kvchuu36j"]
+[gd_scene load_steps=23 format=3 uid="uid://bsv8kvchuu36j"]
 
 [ext_resource type="Script" uid="uid://bjqy28uj8nn4p" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://fmcpvonpuw52" path="res://art/Actor/Characters/NinjaDark/SpriteSheet.png" id="2_qhqgy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+radius = 6.08276
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("2_qhqgy")
@@ -181,8 +184,12 @@ animations = [{
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_a38lo")
 animation = &"side_walk"
 frame = 3
