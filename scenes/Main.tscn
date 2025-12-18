@@ -24,6 +24,17 @@ layer_2/tile_data = PackedInt32Array(196620, 262148, 2, 524306, 262148, 2, 65564
 [node name="player" parent="." instance=ExtResource("2_rvslj")]
 position = Vector2(25, 21)
 
+[node name="world_cam" type="Camera2D" parent="player"]
+zoom = Vector2(4, 4)
+limit_left = 0
+limit_top = 0
+limit_right = 1152
+limit_bottom = 656
+limit_smoothed = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
 [node name="Monk" parent="." instance=ExtResource("3_0bbpv")]
 position = Vector2(568, 334)
 
@@ -31,3 +42,7 @@ position = Vector2(568, 334)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(0, 0, 1153, 0, 1153, 658, 0, 656, 0, 4, -301, 228, -233, 840, 903, 859, 1419, 756, 1298, -72, 196, -151)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
