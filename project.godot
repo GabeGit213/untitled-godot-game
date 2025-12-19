@@ -15,9 +15,17 @@ run/main_scene="uid://dajrpwhamxcy7"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://art/icon.svg"
 
+[autoload]
+
+global="*res://scripts/global.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
+[layer_names]
+
+2d_physics/layer_4="scenetrigger"
 
 [rendering]
 
