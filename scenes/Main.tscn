@@ -43,3 +43,4 @@ drag_vertical_enabled = true
 polygon = PackedVector2Array(0, 0, 1153, 0, 1153, 658, 0, 656, 0, 4, -301, 228, -233, 840, 903, 859, 1419, 756, 1298, -72, 196, -151)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_0bbpv")]
+position = Vector2(568, 333)

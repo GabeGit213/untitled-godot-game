@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://db3wop2pmer0d"]
+[gd_scene load_steps=6 format=3 uid="uid://db3wop2pmer0d"]
 
 [ext_resource type="Texture2D" uid="uid://cqtogu8aybor" path="res://art/Actor/Characters/Monk/SpriteSheet.png" id="1_453lb"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_453lb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yfp0"]
+atlas = ExtResource("1_453lb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owhtv"]
 atlas = ExtResource("1_453lb")
 region = Rect2(16, 0, 16, 16)
 
@@ -10,10 +14,18 @@ region = Rect2(16, 0, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_453lb")
+"texture": SubResource("AtlasTexture_1yfp0")
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owhtv")
+}],
+"loop": true,
+"name": &"speaking_to_player",
 "speed": 5.0
 }]
 
@@ -25,6 +37,7 @@ radius = 8.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_hw05q")
+animation = &"speaking_to_player"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
