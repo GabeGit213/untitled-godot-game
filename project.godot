@@ -18,6 +18,7 @@ config/icon="res://art/icon.svg"
 [autoload]
 
 global="*res://scripts/global.gd"
+NavigationManager="*res://scripts/Global/navigation_manager.gd"
 
 [editor_plugins]
 
