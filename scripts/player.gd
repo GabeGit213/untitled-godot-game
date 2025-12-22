@@ -4,16 +4,18 @@ class_name Player
 
 const speed = 75
 var current_dir = "none"
+var can_move = true
 
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
 	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
-	
+
 func _on_spawn(position: Vector2, direction: String):
 	global_position = position
 
 func _physics_process(delta):
 	player_movement(delta)
+
 	
 func player_movement(delta):
 	

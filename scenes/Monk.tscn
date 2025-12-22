@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://db3wop2pmer0d"]
+[gd_scene load_steps=9 format=3 uid="uid://db3wop2pmer0d"]
 
+[ext_resource type="Script" uid="uid://i7xvuf83a13q" path="res://scripts/monk.gd" id="1_1yfp0"]
 [ext_resource type="Texture2D" uid="uid://cqtogu8aybor" path="res://art/Actor/Characters/Monk/SpriteSheet.png" id="1_453lb"]
+[ext_resource type="PackedScene" uid="uid://bg05lk4bbty7r" path="res://interactions/interactable.tscn" id="2_hw05q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1yfp0"]
 atlas = ExtResource("1_453lb")
@@ -32,7 +34,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_1yfp0"]
 radius = 8.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_owhtv"]
+radius = 15.0
+
+[node name="Monk" type="CharacterBody2D"]
+script = ExtResource("1_1yfp0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
@@ -42,3 +48,10 @@ animation = &"speaking_to_player"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_1yfp0")
+
+[node name="Interactable" parent="." instance=ExtResource("2_hw05q")]
+interact_name = "Talk to Monk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_owhtv")

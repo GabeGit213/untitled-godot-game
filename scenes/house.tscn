@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://d05kmfceha8rd"]
+[gd_scene load_steps=41 format=3 uid="uid://d05kmfceha8rd"]
 
 [ext_resource type="Texture2D" uid="uid://c0652hylj8n0i" path="res://art/Backgrounds/Tilesets/Interior/TilesetInterior.png" id="1_3bgk5"]
 [ext_resource type="Script" uid="uid://ggp5egwd1wj8" path="res://scripts/house.gd" id="1_mhx8p"]
@@ -7,9 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://rk2olr6mjipn" path="res://art/Backgrounds/Tilesets/Interior/Elements.png" id="4_wcu0q"]
 [ext_resource type="PackedScene" uid="uid://bsv8kvchuu36j" path="res://scenes/player.tscn" id="5_bwc8c"]
 [ext_resource type="Texture2D" uid="uid://bq2jwg0qxaxpo" path="res://art/Backgrounds/Tilesets/TilesetElement.png" id="5_wcu0q"]
-[ext_resource type="Texture2D" uid="uid://dggw0u3bysexm" path="res://art/Items/Treasure/LittleTreasureChest.png" id="7_bwc8c"]
+[ext_resource type="Script" uid="uid://d3xl17cafqu5p" path="res://scripts/chest.gd" id="7_qcuhb"]
+[ext_resource type="PackedScene" uid="uid://bg05lk4bbty7r" path="res://interactions/interactable.tscn" id="8_65la3"]
 [ext_resource type="Texture2D" uid="uid://b50wgif5pax35" path="res://art/Actor/Characters/Woman/SpriteSheet.png" id="8_mhx8p"]
 [ext_resource type="PackedScene" uid="uid://c2fe8ul8dgp6g" path="res://scenes/door.tscn" id="8_wcu0q"]
+[ext_resource type="Texture2D" uid="uid://cxvf2h3mwr3s7" path="res://art/Items/Treasure/BigTreasureChest.png" id="9_qcuhb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mhx8p"]
 texture = ExtResource("1_3bgk5")
@@ -701,30 +703,31 @@ sources/2 = SubResource("TileSetAtlasSource_qcuhb")
 sources/3 = SubResource("TileSetAtlasSource_7685u")
 sources/4 = SubResource("TileSetAtlasSource_3853c")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bhgw4"]
-atlas = ExtResource("7_bwc8c")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcuhb"]
+size = Vector2(16, 12)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ewhn"]
-atlas = ExtResource("7_bwc8c")
-region = Rect2(16, 0, 16, 16)
+[sub_resource type="CircleShape2D" id="CircleShape2D_65la3"]
+radius = 14.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0fn05"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcuhb"]
+atlas = ExtResource("9_qcuhb")
+region = Rect2(0, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7685u"]
+atlas = ExtResource("9_qcuhb")
+region = Rect2(16, 0, 16, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3853c"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bhgw4")
-}],
-"loop": true,
-"name": &"closed",
-"speed": 5.0
+"texture": SubResource("AtlasTexture_qcuhb")
 }, {
-"frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3ewhn")
+"texture": SubResource("AtlasTexture_7685u")
 }],
 "loop": true,
-"name": &"open",
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -887,11 +890,22 @@ layer_2/tile_data = PackedInt32Array(1441826, 196611, 0, 1441827, 262147, 0, 144
 polygon = PackedVector2Array(431, 352, 545, 352, 546, 355, 558, 355, 559, 352, 656, 352, 656, 223, 431, 223, 431, 351, 423, 326, 418, 215, 501, 214, 666, 213, 669, 352, 661, 360, 427, 360)
 
 [node name="chest" type="StaticBody2D" parent="."]
+script = ExtResource("7_qcuhb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chest"]
+position = Vector2(466, 251)
+shape = SubResource("RectangleShape2D_qcuhb")
+
+[node name="Interactable" parent="chest" instance=ExtResource("8_65la3")]
+position = Vector2(466, 251)
+interact_name = "Open Chest"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chest/Interactable"]
+shape = SubResource("CircleShape2D_65la3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="chest"]
 position = Vector2(466, 250)
-sprite_frames = SubResource("SpriteFrames_0fn05")
-animation = &"open"
+sprite_frames = SubResource("SpriteFrames_3853c")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
