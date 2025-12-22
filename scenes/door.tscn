@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dkkqgm2fjwk2c" path="res://scripts/door.gd" id="1_hpvv5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvdjg"]
+size = Vector2(14, 10)
 
 [node name="Door" type="Area2D"]
 script = ExtResource("1_hpvv5")
@@ -10,6 +11,6 @@ script = ExtResource("1_hpvv5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_uvdjg")
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="Spawn" type="Marker2D" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

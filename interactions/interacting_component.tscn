@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwrwu2ko10kvs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c0ilj"]
+radius = 13.0384
+
+[node name="InteractingComponent" type="Node2D"]
+
+[node name="InteractRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange"]
+shape = SubResource("CircleShape2D_c0ilj")
+
+[node name="InteractLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

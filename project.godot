@@ -17,12 +17,16 @@ config/icon="res://art/icon.svg"
 
 [autoload]
 
-global="*res://scripts/global.gd"
 NavigationManager="*res://scripts/Global/navigation_manager.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[dialogue_manager]
+
+runtime/balloon_path="res://scenes/balloon.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
 
 [input]
 
@@ -32,10 +36,14 @@ interact={
 ]
 }
 
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dialogue/untitled.dialogue")
+
 [layer_names]
 
 2d_physics/layer_1="world"
-2d_physics/layer_2="interaction"
+2d_physics/layer_2="interactions"
 
 [rendering]
 

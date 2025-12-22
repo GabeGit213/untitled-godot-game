@@ -884,7 +884,7 @@ layer_2/tile_data = PackedInt32Array(1441826, 196611, 0, 1441827, 262147, 0, 144
 [node name="collision" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collision"]
-polygon = PackedVector2Array(431, 352, 656, 352, 656, 223, 431, 223, 431, 351, 423, 326, 418, 215, 501, 214, 666, 213, 669, 352, 661, 360, 427, 360)
+polygon = PackedVector2Array(431, 352, 545, 352, 546, 355, 558, 355, 559, 352, 656, 352, 656, 223, 431, 223, 431, 351, 423, 326, 418, 215, 501, 214, 666, 213, 669, 352, 661, 360, 427, 360)
 
 [node name="chest" type="StaticBody2D" parent="."]
 
@@ -907,16 +907,19 @@ shape = SubResource("CircleShape2D_p4eap")
 
 [node name="Doors" type="Node" parent="."]
 
-[node name="Door-S" parent="Doors" instance=ExtResource("8_wcu0q")]
+[node name="Door_S" parent="Doors" instance=ExtResource("8_wcu0q")]
 position = Vector2(552, 356)
 destination_level_tag = "world"
 destination_door_tag = "E"
 spawn_direction = "down"
 
-[node name="Marker2D" parent="Doors/Door-S" index="1"]
-position = Vector2(0, -21)
+[node name="CollisionShape2D" parent="Doors/Door_S" index="0"]
+position = Vector2(0, 3)
+
+[node name="Spawn" parent="Doors/Door_S" index="1"]
+position = Vector2(0, -8)
 
 [node name="player" parent="." instance=ExtResource("5_bwc8c")]
-position = Vector2(552, 341)
+position = Vector2(552, 349)
 
-[editable path="Doors/Door-S"]
+[editable path="Doors/Door_S"]
