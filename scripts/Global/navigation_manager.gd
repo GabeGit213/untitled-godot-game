@@ -17,6 +17,8 @@ func go_to_level(level_tag, destination_tag):
 			scene_to_load = scene_house
 			
 	if scene_to_load != null:
+		TransitionScene.transition()
+		await TransitionScene.on_transition_finished
 		spawn_door_tag = destination_tag
 		get_tree().call_deferred("change_scene_to_packed", scene_to_load)
 		

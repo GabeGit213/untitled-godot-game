@@ -19,10 +19,16 @@ config/icon="res://art/icon.svg"
 
 NavigationManager="*res://scripts/Global/navigation_manager.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+TransitionScene="*res://scenes/transition_scene.tscn"
 
 [dialogue_manager]
 
 runtime/balloon_path="res://scenes/balloon.tscn"
+
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=600
 
 [editor_plugins]
 

@@ -6,7 +6,7 @@ extends StaticBody2D
 func _ready() -> void:
 	interactable.interact = _on_interact
 	
-func _on_interact():
+func _on_interact(): # needs work, frame change doesnt work
 	if animated_sprite_2d.frame == 0:
 		animated_sprite_2d.frame == 1
 		interactable.is_interactable = false

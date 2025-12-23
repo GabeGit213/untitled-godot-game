@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://d05kmfceha8rd"]
+[gd_scene load_steps=24 format=3 uid="uid://d05kmfceha8rd"]
 
 [ext_resource type="Texture2D" uid="uid://c0652hylj8n0i" path="res://art/Backgrounds/Tilesets/Interior/TilesetInterior.png" id="1_3bgk5"]
 [ext_resource type="Script" uid="uid://ggp5egwd1wj8" path="res://scripts/house.gd" id="1_mhx8p"]
@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://bq2jwg0qxaxpo" path="res://art/Backgrounds/Tilesets/TilesetElement.png" id="5_wcu0q"]
 [ext_resource type="Script" uid="uid://d3xl17cafqu5p" path="res://scripts/chest.gd" id="7_qcuhb"]
 [ext_resource type="PackedScene" uid="uid://bg05lk4bbty7r" path="res://interactions/interactable.tscn" id="8_65la3"]
-[ext_resource type="Texture2D" uid="uid://b50wgif5pax35" path="res://art/Actor/Characters/Woman/SpriteSheet.png" id="8_mhx8p"]
 [ext_resource type="PackedScene" uid="uid://c2fe8ul8dgp6g" path="res://scenes/door.tscn" id="8_wcu0q"]
 [ext_resource type="Texture2D" uid="uid://cxvf2h3mwr3s7" path="res://art/Items/Treasure/BigTreasureChest.png" id="9_qcuhb"]
+[ext_resource type="AudioStream" uid="uid://dktfu167756ic" path="res://music/Relax.wav" id="13_7685u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mhx8p"]
 texture = ExtResource("1_3bgk5")
@@ -731,147 +731,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_82h1m"]
-atlas = ExtResource("8_mhx8p")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e5ov4"]
-atlas = ExtResource("8_mhx8p")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ep1bp"]
-atlas = ExtResource("8_mhx8p")
-region = Rect2(16, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_57tf3"]
-atlas = ExtResource("8_mhx8p")
-region = Rect2(16, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3kuml"]
-atlas = ExtResource("8_mhx8p")
-region = Rect2(16, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lamap"]
-atlas = ExtResource("8_mhx8p")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_de74l"]
-atlas = ExtResource("8_mhx8p")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qrght"]
-atlas = ExtResource("8_mhx8p")
-region = Rect2(0, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r8noe"]
-atlas = ExtResource("8_mhx8p")
-region = Rect2(0, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ivbqp"]
-atlas = ExtResource("8_mhx8p")
-region = Rect2(0, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nrgyv"]
-atlas = ExtResource("8_mhx8p")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c2gpw"]
-atlas = ExtResource("8_mhx8p")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4jkga"]
-atlas = ExtResource("8_mhx8p")
-region = Rect2(48, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r2srw"]
-atlas = ExtResource("8_mhx8p")
-region = Rect2(48, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k27xr"]
-atlas = ExtResource("8_mhx8p")
-region = Rect2(48, 48, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8cron"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_82h1m")
-}],
-"loop": true,
-"name": &"back_idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e5ov4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ep1bp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_57tf3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3kuml")
-}],
-"loop": true,
-"name": &"back_walk",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lamap")
-}],
-"loop": true,
-"name": &"front_idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_de74l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qrght")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r8noe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ivbqp")
-}],
-"loop": true,
-"name": &"front_walk",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nrgyv")
-}],
-"loop": true,
-"name": &"side_idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c2gpw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4jkga")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r2srw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k27xr")
-}],
-"loop": true,
-"name": &"side_walk",
-"speed": 5.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_p4eap"]
-radius = 8.0
-
 [node name="house" type="Node2D"]
 script = ExtResource("1_mhx8p")
 
@@ -907,18 +766,6 @@ shape = SubResource("CircleShape2D_65la3")
 position = Vector2(466, 250)
 sprite_frames = SubResource("SpriteFrames_3853c")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(602, 269)
-sprite_frames = SubResource("SpriteFrames_8cron")
-animation = &"back_walk"
-frame_progress = 0.897524
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(602, 270)
-shape = SubResource("CircleShape2D_p4eap")
-
 [node name="Doors" type="Node" parent="."]
 
 [node name="Door_S" parent="Doors" instance=ExtResource("8_wcu0q")]
@@ -935,5 +782,21 @@ position = Vector2(0, -8)
 
 [node name="player" parent="." instance=ExtResource("5_bwc8c")]
 position = Vector2(552, 349)
+
+[node name="world_cam" type="Camera2D" parent="player"]
+zoom = Vector2(4, 4)
+limit_left = 0
+limit_top = 0
+limit_right = 1152
+limit_bottom = 656
+limit_smoothed = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_7685u")
+volume_db = -15.0
+autoplay = true
 
 [editable path="Doors/Door_S"]
